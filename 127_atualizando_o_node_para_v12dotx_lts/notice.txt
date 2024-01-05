@@ -1,0 +1,7 @@
+Não atualizei meus dados, mantive: dia 05/01/2024
+
+node: 
+    versão: 16.14.2
+
+npm: 
+    versão 9.7.2
