@@ -1,5 +1,5 @@
 {
-  "name": "130_express_introducao",
+  "name": "132_express_reqParams_reqQuery_e_reqBody",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
