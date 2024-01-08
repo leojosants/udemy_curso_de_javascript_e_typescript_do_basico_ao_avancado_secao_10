@@ -19,8 +19,7 @@ const routes = require('./routes');
 const path = require('path');
 const helmet = require('helmet');
 const csrf = require('csurf');
-const { middlewareGlobal, checkCSRFerror,csrfMiddleware } = require('./src/middlewares/middleware');
-const csurf = require('csurf');
+const { middlewareGlobal, checkCSRFerror, csrfMiddleware } = require('./src/middlewares/middleware');
 
 app.use(helmet());
 app.use(express.urlencoded({ extended: true }));
@@ -41,7 +40,7 @@ app.use(sessionOptions);
 app.use(flash());
 app.set('views', path.resolve(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs');
-app.use(csurf());
+app.use(csrf());
 app.use(middlewareGlobal); // our own middleware
 app.use(checkCSRFerror); // our own middleware
 app.use(csrfMiddleware); // our own middleware
