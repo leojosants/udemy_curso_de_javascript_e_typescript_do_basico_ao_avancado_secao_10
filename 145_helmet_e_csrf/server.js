@@ -23,6 +23,7 @@ const { middlewareGlobal, checkCSRFerror, csrfMiddleware } = require('./src/midd
 
 app.use(helmet());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use(express.static(path.resolve(__dirname, 'public')));
 
 const sessionOptions = session({
@@ -41,9 +42,9 @@ app.use(flash());
 app.set('views', path.resolve(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs');
 app.use(csrf());
-app.use(middlewareGlobal); // our own middleware
-app.use(checkCSRFerror); // our own middleware
-app.use(csrfMiddleware); // our own middleware
+app.use(middlewareGlobal);  // our own middleware
+app.use(checkCSRFerror);    // our own middleware
+app.use(csrfMiddleware);    // our own middleware
 app.use(routes);
 
 app.on('pronto', () => {
